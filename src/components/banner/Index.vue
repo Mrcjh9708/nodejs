@@ -1,5 +1,5 @@
 <template>
   <div>
-    我的天
+    轮播图
   </div>
 </template>
