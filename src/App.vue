@@ -1,14 +1,15 @@
 <template>
   <div>
-    <Film></Film>
+    <router-view></router-view>
+    <MzFooter></MzFooter>
   </div>
 </template>
 
 <script>
-import Film from './views/Film.vue';
+import MzFooter from './components/MzFooter/Index.vue';
 export default {
   components: {
-    Film
+    MzFooter
   }
 }
 </script>

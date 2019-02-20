@@ -35,7 +35,7 @@ export default {
       // 对某个代码不校验 eslint 的规则
       /* eslint-disable */
       this.mySwiper = new Swiper(".swiper-container", {
-        // autoplay: true,
+        autoplay: true,
         loop: true,
         // 如果需要分页器
         pagination: {
