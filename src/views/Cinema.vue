@@ -1,5 +1,5 @@
 <template>
   <div>
-    轮播图
+    影院页
   </div>
 </template>
