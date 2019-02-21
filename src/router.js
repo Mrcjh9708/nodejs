@@ -18,6 +18,7 @@ import Cinema from './views/Cinema.vue';
 import Center from './views/Center.vue';
 import City from './views/City.vue';
 import Home from './views/Home.vue';
+import Detail from './views/Detail.vue';
 
 Vue.use(VueRouter);
 
@@ -59,8 +60,15 @@ let router = new VueRouter({
       ]
     },
     {
+      // 城市选择页
+      name: 'lose',
       path: '/city',
       component: City
+    },
+    {
+      // 详情页
+      path: '/detail/:id',
+      component: Detail
     },
     // 设置一个 通配符的 一级路由，当url地址无法与上面的规则匹配的时候，就会跟我匹配。
     {
