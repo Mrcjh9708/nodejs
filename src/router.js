@@ -19,10 +19,14 @@ import Center from './views/Center.vue';
 import City from './views/City.vue';
 import Home from './views/Home.vue';
 import Detail from './views/Detail.vue';
+import Login from './views/Login.vue';
+import NProgress from 'nprogress';
+NProgress.configure({ showSpinner: false });
 
 Vue.use(VueRouter);
 
 let router = new VueRouter({
+  mode: 'hash',
   // 配置路由对照表  url -> 视图组件
   // localhost:8080/#/films  -> Film.vue
   // localhost:8080/#/cinemas-> Cinema.vue
@@ -70,6 +74,34 @@ let router = new VueRouter({
       path: '/detail/:id',
       component: Detail
     },
+    {
+      path: '/card',
+      component: {
+        render (h) {
+          return h('div', '卖座卡页面');
+        }
+      }
+    },
+    {
+      path: '/money',
+      component: {
+        render (h) {
+          return h('div', '余额页面');
+        }
+      }
+    },
+    {
+      path: '/system',
+      component: {
+        render (h) {
+          return h('div', '设置页面');
+        }
+      }
+    },
+    {
+      path: '/login',
+      component: Login
+    },
     // 设置一个 通配符的 一级路由，当url地址无法与上面的规则匹配的时候，就会跟我匹配。
     {
       path: '*',
@@ -94,6 +126,39 @@ let router = new VueRouter({
   ]
 })
 
+// 全局前置守卫
+/*
+  路由守卫中
+
+  a -> b
+  to  将要去的路由的路由对象      b
+  from 从哪里去的路由的路由对象   a
+  next 是否允许去。
+
+  a -> b 如果不想去到 b   next(false)  或者 不使用 next()
+         如果允许就得     next()
+         如果不允许，并且想让他去到别的页面   next('/login')
+*/
+
+router.beforeEach((to, from, next) => {
+  // 调用nprogress.start();
+  NProgress.start();
+
+  if (to.path === '/card' || to.path === '/money' || to.path === '/system') {
+    // 阻止
+    // next(false);
+    next({
+      path: '/login'
+    })
+  } else {
+    next();
+  }
+})
+// 全局后置守卫
+router.afterEach((to, from) => {
+  // 完成 nprogress.done()
+  NProgress.done();
+})
 export default router;
 
 // 1. VueRouter  为什么要使用 Vue.use(), 为了去触发 VueRouter 的install 方法
