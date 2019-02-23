@@ -13,16 +13,16 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Film from './views/Film.vue';
-import Cinema from './views/Cinema.vue';
-import Center from './views/Center.vue';
-import City from './views/City.vue';
-import Home from './views/Home.vue';
-import Detail from './views/Detail.vue';
-import Login from './views/Login.vue';
-import Card from './views/Card.vue';
-import Money from './views/Money.vue';
-import System from './views/System.vue';
+// import Film from './views/Film.vue';
+// import Cinema from './views/Cinema.vue';
+// import Center from './views/Center.vue';
+// import City from './views/City.vue';
+// import Home from './views/Home.vue';
+// import Detail from './views/Detail.vue';
+// import Login from './views/Login.vue';
+// import Card from './views/Card.vue';
+// import Money from './views/Money.vue';
+// import System from './views/System.vue';
 import NProgress from 'nprogress';
 NProgress.configure({ showSpinner: true });
 
@@ -30,6 +30,12 @@ Vue.use(VueRouter);
 
 let router = new VueRouter({
   mode: 'hash',
+  scrollBehavior (to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    }
+  },
   // 配置路由对照表  url -> 视图组件
   // localhost:8080/#/films  -> Film.vue
   // localhost:8080/#/cinemas-> Cinema.vue
@@ -38,24 +44,24 @@ let router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: Home,
+      component: () => import('./views/Home.vue'),
       children: [
         // PS: 不是一级路由的话，path路径前面不要加 /
         // PS: 二级或二级以上的路由，他们的url地址，是会从一级路由开始一直做追加的。
         // localhost:8080/#/films
         {
           path: 'films', // 就是url路径
-          component: Film
+          component: () => import('./views/Film.vue')
         },
         // localhost:8080/#/cinemas
         {
           path: 'cinemas',
-          component: Cinema
+          component: () => import('./views/Cinema.vue')
         },
         // localhost:8080/#/center
         {
           path: 'center',
-          component: Center
+          component: () => import('./views/Center.vue')
         },
         // 空的儿子
         // localhost:8080/#/  ->  localhost:8080/#/films
@@ -70,28 +76,28 @@ let router = new VueRouter({
       // 城市选择页
       name: 'lose',
       path: '/city',
-      component: City
+      component: () => import('./views/City.vue')
     },
     {
       // 详情页
       path: '/detail/:id',
-      component: Detail
+      component: () => import('./views/Detail.vue')
     },
     {
       path: '/card',
-      component: Card
+      component: () => import('./views/Card.vue')
     },
     {
       path: '/money',
-      component: Money
+      component: () => import('./views/Money.vue')
     },
     {
       path: '/system',
-      component: System
+      component: () => import('./views/System.vue')
     },
     {
       path: '/login',
-      component: Login
+      component: () => import('./views/Login.vue')
     },
     // 设置一个 通配符的 一级路由，当url地址无法与上面的规则匹配的时候，就会跟我匹配。
     {

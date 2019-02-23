@@ -10,6 +10,7 @@
       <router-link tag="li" to="/detail/300">朝花夕誓</router-link>
       <router-link tag="li" to="/detail/400">一吻定情</router-link>
     </ul>
+    <div style="height: 2000px"></div>
   </div>
 </template>
 
