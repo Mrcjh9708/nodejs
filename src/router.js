@@ -76,7 +76,7 @@ let router = new VueRouter({
       // 城市选择页
       name: 'lose',
       path: '/city',
-      component: () => import('./views/City.vue')
+      component: () => import('./views/City/Index.vue')
     },
     {
       // 详情页
