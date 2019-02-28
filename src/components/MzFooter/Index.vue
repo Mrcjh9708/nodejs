@@ -6,8 +6,8 @@
     <router-link to="/cinemas" active-class="a">
       <i class="iconfont icon-yingyuan"></i>影院
     </router-link>
-    <router-link to="" active-class=" ">
-      <i class="iconfont icon-pintuan"></i>拼团
+    <router-link to="intuan.html" active-class=" ">
+      <i class="iconfont icon-pintuan"></i>9.9拼团
     </router-link>
     <router-link to="/center" active-class="a">
       <i class="iconfont icon-wode"></i>我的

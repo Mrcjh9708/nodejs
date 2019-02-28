@@ -7,11 +7,11 @@
 
     <ul class="my-order-tab">
       <li>
-        <i class="iconfont icon-youhui"></i>
+        <i class="iconfont icon-order"></i>
         <div class="common-p">电影订单</div>
       </li>
       <li>
-        <i class="iconfont icon-linggan"></i>
+        <i class="iconfont icon-pintuandingdan"></i>
         <div class="common-p">拼团订单</div>
       </li>
     </ul>
