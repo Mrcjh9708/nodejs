@@ -1,42 +1,3 @@
-/*
-  var arr = [
-    {
-      name: '鞍山',
-      pinyin: 'anshan'
-    },
-    {
-      name: '北京',
-      pinyin: 'beijing'
-    },
-    ....
-  ]
-
-  var arr1 = [
-    {
-      py: 'A',
-      list: [
-        {
-          name: '鞍山'
-        },
-        {
-          name: '安庆'
-        }
-        ...
-      ]
-    },
-    {
-      py: 'B',
-      list: [
-        {
-          name: '北京'
-        }
-        。。。
-      ]
-    }
-  ]
-
- */
-
 <template>
   <div class="mz-city">
     {{ maName }}
@@ -126,9 +87,9 @@ export default {
 
   data () {
     return {
-      // curCityName: '深圳', // 自身不要，而是用仓库中的curCityName
+      curCityName: '深圳', // 自身不要，而是用仓库中的curCityName
       // 城市数据列表
-      // cityData: []
+      cityData: []
     }
   },
 

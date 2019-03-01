@@ -1,15 +1,16 @@
 <template>
-  <div>
+  <div class="home-film">
+
+    <router-link tag="div" to="/city" class="city-fixed">
+      <span>{{ curCityName }}</span>
+      <i class="iconfont icon-xiala" style="font-size: 10px;"></i>
+    </router-link>
+
     <MzBanner></MzBanner>
     <MzTabs></MzTabs>
 
     <button @click="goCity">城市选择页面</button>
-    <ul>
-      <router-link tag="li" to="/detail/100">今夜在浪漫剧场</router-link>
-      <router-link tag="li" to="/detail/200">阿丽塔</router-link>
-      <router-link tag="li" to="/detail/300">朝花夕誓</router-link>
-      <router-link tag="li" to="/detail/400">一吻定情</router-link>
-    </ul>
+
     <div style="height: 2000px"></div>
   </div>
 </template>
@@ -49,3 +50,21 @@ export default {
   }
 }
 </script>
+<style lang="less">
+.home-film {
+  .city-fixed {
+    position: absolute;
+    top: 18px;
+    left: 7px;
+    color: #fff;
+    z-index: 10;
+    font-size: 13px;
+    background: rgba(0,0,0,.2);
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 5px;
+  }
+}
+</style>
