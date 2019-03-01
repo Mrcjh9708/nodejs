@@ -118,7 +118,7 @@ let store = new Vuex.Store({
           // this.cityData = res.data.cities;
           // this.$store.commit('chgCityData', res.data.cities);
           // this.chgCityData(res.data.cities);
-          commit('hhj', res.data.cities);
+          commit('chgCityData', res.data.cities);
         } else {
           alert(res.msg);
         }

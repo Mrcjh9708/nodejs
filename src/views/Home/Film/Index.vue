@@ -11,7 +11,6 @@
 
     <button @click="goCity">城市选择页面</button>
 
-    <div style="height: 2000px"></div>
   </div>
 </template>
 
@@ -23,6 +22,12 @@ export default {
   components: {
     MzBanner,
     MzTabs
+  },
+
+  computed: {
+    curCityName () {
+      return this.$store.state.curCityName
+    }
   },
 
   methods: {

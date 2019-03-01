@@ -1,3 +1,4 @@
+
 <template>
   <div class="mz-city">
     {{ maName }}
@@ -87,9 +88,9 @@ export default {
 
   data () {
     return {
-      curCityName: '深圳', // 自身不要，而是用仓库中的curCityName
+      // curCityName: '深圳', // 自身不要，而是用仓库中的curCityName
       // 城市数据列表
-      cityData: []
+      // cityData: []
     }
   },
 
