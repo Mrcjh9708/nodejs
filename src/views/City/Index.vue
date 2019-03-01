@@ -1,13 +1,6 @@
 
 <template>
   <div class="mz-city">
-    {{ maName }}
-    {{ mbName }}
-    {{ mcName }}
-
-    <!-- this.$store.commit('ma/chgName') -->
-    <button @click="chgName({ name: '张三' })">修改 a 中的 name</button>
-    <button @click="$store.commit('updateName')">修改 c 中的 name</button>
 
     <MzHeader :title="'当前城市-' + curCityName"></MzHeader>
 

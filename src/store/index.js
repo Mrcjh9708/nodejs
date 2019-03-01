@@ -2,11 +2,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-
-import a from './modules/a';
-import b from './modules/b';
-import c from './modules/c';
-
 Vue.use(Vuex);
 
 // 创建 仓库
@@ -125,13 +120,6 @@ let store = new Vuex.Store({
       })
     }
   },
-
-  modules: {
-    ma: a,
-    mb: b,
-    mc: c
-  }
-
   // namespaced: true, // 如果用了 moduels，推荐大家都使用上命名空间。
 })
 
